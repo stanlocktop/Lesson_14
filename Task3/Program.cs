@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
         Dictionary<string, string> contacts = new Dictionary<string, string>();
 
         while (true)
