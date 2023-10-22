@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
         Queue<Order> orderQueue = new Queue<Order>();
         int processedOrders = 0;
         double totalProcessedAmount = 0.0;
