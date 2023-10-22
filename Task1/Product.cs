@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-using System;
-using System.Collections.Generic;
-
 class Product
 {
     public int Id { get; }
