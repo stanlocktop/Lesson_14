@@ -41,7 +41,7 @@ class Program
                     break;
 
                 case "2":
-                    // Видалення контакту
+                    // Видалення 
                     Console.Write("Введіть ім'я контакту для видалення: ");
                     string contactName = Console.ReadLine();
 
@@ -57,7 +57,7 @@ class Program
                     break;
 
                 case "3":
-                    // Пошук контакту
+                    // Пошук 
                     Console.Write("Введіть ім'я контакту для пошуку: ");
                     string searchName = Console.ReadLine();
 
