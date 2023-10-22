@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-// Клас "Product" представляє продукт.
+using System;
+using System.Collections.Generic;
+
 class Product
 {
     public int Id { get; }
