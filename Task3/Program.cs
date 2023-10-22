@@ -2,22 +2,20 @@
 {
     static void Main(string[] args)
     {
-        try
-        {
-            int a = 10;
-            int b = 5;
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
-            Console.WriteLine($"Додавання: {a} + {b} = {MathUtility.Додавання(a, b)}");
-            Console.WriteLine($"Віднімання: {a} - {b} = {MathUtility.Віднімання(a, b)}");
-            Console.WriteLine($"Множення: {a} * {b} = {MathUtility.Множення(a, b)}");
-            int c = 10;
-            int d = 0;
-            Console.WriteLine($"Ділення: {c} / {d} = {MathUtility.Ділення(c, d)}");
-        }
-        catch (DivideByZeroException ex)
-        {
-            Console.WriteLine(ex.Message);
-            Console.ReadKey();
-        }
+        Shop shop = new Shop();
+
+        // Додавання продуктів до асортименту магазину
+        shop.AddProduct(new Product(1, "Product A", 10.99));
+        shop.AddProduct(new Product(2, "Product B", 5.99));
+        shop.AddProduct(new Product(3, "Product C", 7.49));
+
+        Cart cart = new Cart();
+
+        // Додавання продуктів до кошика клієнта
+        cart.AddToCart(shop.GetProductById(1));
+        cart.AddToCart(shop.GetProductById(3));
+
+        // Виведення загальної ціни продуктів у кошику клієнта
+        Console.WriteLine("Загальна вартість продуктів у кошику: " + cart.GetTotalPrice());
     }
 }

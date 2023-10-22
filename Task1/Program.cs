@@ -1,18 +1,25 @@
-﻿class Program
+﻿using System;
+using System.Collections.Generic;
+
+class Program
 {
     static void Main(string[] args)
     {
-        Car myCar = new Car(0, 0);
-        Console.OutputEncoding = System.Text.Encoding.Unicode;
-        Console.WriteLine("Початкова позиція:");
-        Console.WriteLine($"X: {myCar.Position.X}, Y: {myCar.Position.Y}");
+        Shop shop = new Shop();
 
-        myCar.StartEngine();
-        myCar.Move(10, 20);
-        Console.WriteLine("Автомобіль переміщено:");
-        Console.WriteLine($"X: {myCar.Position.X}, Y: {myCar.Position.Y}");
+        // Додавання продуктів до асортименту магазину
+        shop.AddProduct(new Product(1, "Product A", 10.99));
+        shop.AddProduct(new Product(2, "Product B", 5.99));
+        shop.AddProduct(new Product(3, "Product C", 7.49));
 
-        myCar.StopEngine();
+        Cart cart = new Cart();
+
+        // Додавання продуктів до кошика клієнта
+        cart.AddToCart(shop.GetProductById(1));
+        cart.AddToCart(shop.GetProductById(3));
+
+        // Виведення загальної ціни продуктів у кошику клієнта
+        Console.WriteLine("Загальна вартість продуктів у кошику: " + cart.GetTotalPrice());
         Console.ReadKey();
     }
 }
